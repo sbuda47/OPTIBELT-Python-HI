@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="684" viewBox="0 0 960 684" role="img" aria-labelledby="title desc">
+<title id="title">From sensor recordings to an operator health index</title><desc id="desc">Read the numbered steps. Each score describes a two-second window.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#64748b"/></marker></defs>
+<rect width="960" height="684" rx="12" fill="#f8fafc"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="28" y="34" font-size="23" font-weight="700" fill="#0f172a">From sensor recordings to an operator health index</text>
+<text x="28" y="58" font-size="14" fill="#475569">Read the numbered steps. Each score describes a two-second window.</text>
+<rect x="28" y="88" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="53" cy="116" r="13" fill="#0f766e"/><text x="53" y="121" text-anchor="middle" font-size="14" font-weight="700" fill="white">1</text>
+<text x="76" y="122" font-size="18" font-weight="700" fill="#0f172a">Check recordings</text>
+<text x="46" y="153" font-size="16" fill="#334155">Vibration, torque and current</text>
+<text x="46" y="176" font-size="16" fill="#334155">Verify file identity, channels</text>
+<text x="46" y="199" font-size="16" fill="#334155">and usable samples.</text>
+<rect x="340" y="88" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="365" cy="116" r="13" fill="#0f766e"/><text x="365" y="121" text-anchor="middle" font-size="14" font-weight="700" fill="white">2</text>
+<text x="388" y="122" font-size="18" font-weight="700" fill="#0f172a">Use a common clock</text>
+<text x="358" y="153" font-size="16" fill="#334155">Filter and resample current:</text>
+<text x="358" y="176" font-size="16" fill="#334155">100 kHz to 25.6 kHz.</text>
+<text x="358" y="199" font-size="16" fill="#334155">Match vibration and torque.</text>
+<rect x="652" y="88" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="677" cy="116" r="13" fill="#0f766e"/><text x="677" y="121" text-anchor="middle" font-size="14" font-weight="700" fill="white">3</text>
+<text x="700" y="122" font-size="18" font-weight="700" fill="#0f172a">Build rolling windows</text>
+<text x="670" y="153" font-size="16" fill="#334155">Collect two seconds of data.</text>
+<text x="670" y="176" font-size="16" fill="#334155">Advance one second</text>
+<text x="670" y="199" font-size="16" fill="#334155">for the next window.</text>
+<rect x="652" y="282" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="677" cy="310" r="13" fill="#0f766e"/><text x="677" y="315" text-anchor="middle" font-size="14" font-weight="700" fill="white">4</text>
+<text x="700" y="316" font-size="18" font-weight="700" fill="#0f172a">Describe the signals</text>
+<text x="670" y="347" font-size="16" fill="#334155">Summarise size, shape</text>
+<text x="670" y="370" font-size="16" fill="#334155">and frequency content.</text>
+<text x="670" y="393" font-size="16" fill="#334155">Remove redundant summaries.</text>
+<rect x="340" y="282" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="365" cy="310" r="13" fill="#0f766e"/><text x="365" y="315" text-anchor="middle" font-size="14" font-weight="700" fill="white">5</text>
+<text x="388" y="316" font-size="18" font-weight="700" fill="#0f172a">Adjust for load</text>
+<text x="358" y="347" font-size="16" fill="#334155">Subtract the healthy centre</text>
+<text x="358" y="370" font-size="16" fill="#334155">for the declared load:</text>
+<text x="358" y="393" font-size="16" fill="#334155">0%, 30% or 60%.</text>
+<rect x="28" y="282" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="53" cy="310" r="13" fill="#0f766e"/><text x="53" y="315" text-anchor="middle" font-size="14" font-weight="700" fill="white">6</text>
+<text x="76" y="316" font-size="18" font-weight="700" fill="#0f172a">Measure departure</text>
+<text x="46" y="347" font-size="16" fill="#334155">Compare the joint pattern</text>
+<text x="46" y="370" font-size="16" fill="#334155">with the healthy reference</text>
+<text x="46" y="393" font-size="16" fill="#334155">using Mahalanobis distance.</text>
+<rect x="28" y="476" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="53" cy="504" r="13" fill="#0f766e"/><text x="53" y="509" text-anchor="middle" font-size="14" font-weight="700" fill="white">7</text>
+<text x="76" y="510" font-size="18" font-weight="700" fill="#0f172a">Smooth the distance</text>
+<text x="46" y="541" font-size="16" fill="#334155">Combine recent distances</text>
+<text x="46" y="564" font-size="16" fill="#334155">to reduce rapid fluctuations</text>
+<text x="46" y="587" font-size="16" fill="#334155">while following new changes.</text>
+<rect x="340" y="476" width="280" height="144" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<circle cx="365" cy="504" r="13" fill="#0f766e"/><text x="365" y="509" text-anchor="middle" font-size="14" font-weight="700" fill="white">8</text>
+<text x="388" y="510" font-size="18" font-weight="700" fill="#0f172a">Calculate operator HI</text>
+<text x="358" y="541" font-size="16" fill="#334155">Map the distance to 0–100.</text>
+<text x="358" y="564" font-size="16" fill="#334155">Higher: closer to reference.</text>
+<text x="358" y="587" font-size="16" fill="#334155">Lower: further from reference.</text>
+<rect x="652" y="476" width="280" height="144" rx="10" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.5"/>
+<circle cx="677" cy="504" r="13" fill="#0f766e"/><text x="677" y="509" text-anchor="middle" font-size="14" font-weight="700" fill="white">9</text>
+<text x="700" y="510" font-size="18" font-weight="700" fill="#0f172a">Display and notify</text>
+<text x="670" y="541" font-size="16" fill="#334155">Show HI and warning state.</text>
+<text x="670" y="564" font-size="16" fill="#334155">Confirm a critical request</text>
+<text x="670" y="587" font-size="16" fill="#334155">after the required duration.</text>
+<polyline points="308,160 336,160" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="620,160 648,160" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="792,232 792,278" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="652,354 624,354" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="340,354 312,354" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="168,426 168,472" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="308,548 336,548" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="620,548 648,548" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="28" y="656" font-size="15" fill="#475569">The system requests operator attention. It does not send an automatic motor-stop command.</text>
+</g></svg>

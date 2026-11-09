@@ -1,0 +1,10 @@
+flowchart LR
+    H["Healthy recordings"] --> F["Earlier sections: learn healthy behaviour"]
+    H --> C["Separate sections: calibrate the boundary"]
+    H --> T["Later sections: check healthy response"]
+    F --> M["Freeze reference and boundary"]
+    C --> M
+    M --> E["Evaluate the frozen HI"]
+    T --> E
+    X["Fault recording check sections"] --> E
+    E --> R["Compare warnings, critical requests and missed faults"]

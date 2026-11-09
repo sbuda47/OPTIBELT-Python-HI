@@ -1,0 +1,11 @@
+flowchart TD
+    A["Raw recordings: vibration, torque, three current phases"] --> B["Check file identity, channels and usable samples"]
+    B --> C["Bring signals onto a common 25.6 kHz clock"]
+    C --> D["Take a 2-second window, advancing 1 second each time"]
+    D --> E["Summarise signal size, shape and frequency content"]
+    E --> F["Adjust for the declared motor load"]
+    F --> G["Measure distance from the healthy reference"]
+    R["Reference learned from healthy data only"] --> G
+    G --> H["Smooth the distance over time"]
+    H --> I["Convert to a 0–100 operator HI"]
+    I --> J["Dashboard, warning state and confirmed critical request"]

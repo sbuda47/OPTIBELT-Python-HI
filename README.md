@@ -20,19 +20,7 @@ This repository contains the reproducible Python implementation, a web dashboard
 
 Instead of judging every sensor separately, the HI asks: **how unusual is this combination of readings compared with healthy motor behaviour?**
 
-```mermaid
-flowchart TD
-    A["Raw recordings: vibration, torque, three current phases"] --> B["Check file identity, channels and usable samples"]
-    B --> C["Bring signals onto a common 25.6 kHz clock"]
-    C --> D["Take a 2-second window, advancing 1 second each time"]
-    D --> E["Summarise signal size, shape and frequency content"]
-    E --> F["Adjust for the declared motor load"]
-    F --> G["Measure distance from the healthy reference"]
-    R["Reference learned from healthy data only"] --> G
-    G --> H["Smooth the distance over time"]
-    H --> I["Convert to a 0–100 operator HI"]
-    I --> J["Dashboard, warning state and confirmed critical request"]
-```
+![Pipeline from raw recordings through load adjustment and distance scoring to the operator HI](docs/diagrams/hi-pipeline.svg)
 
 1. **Check the inputs.** The pipeline checks file fingerprints, expected channels and sample validity. Missing vibration, invalid samples or flat signals are not silently filled in and treated as healthy.
 2. **Align the sampling rates.** The source records current at 100 kHz and vibration/torque at 25.6 kHz. Current is filtered and resampled to 25.6 kHz, so the same time window can be compared across sensors. This removes higher-frequency current content; it does not preserve the full 100 kHz bandwidth. A common clock also does not prove that physical sensor clocks were synchronized.
@@ -45,18 +33,7 @@ flowchart TD
 
 Healthy recordings provide separate time sections for fitting, calibration and checking, with gaps between sections. Fault recordings are used to examine response, not to fit the healthy reference or choose its calibration threshold.
 
-```mermaid
-flowchart LR
-    H["Healthy recordings"] --> F["Earlier sections: learn healthy behaviour"]
-    H --> C["Separate sections: calibrate the boundary"]
-    H --> T["Later sections: check healthy response"]
-    F --> M["Freeze reference and boundary"]
-    C --> M
-    M --> E["Evaluate the frozen HI"]
-    T --> E
-    X["Fault recording check sections"] --> E
-    E --> R["Compare warnings, critical requests and missed faults"]
-```
+![Healthy fitting and calibration are separated from evaluation of the frozen reference](docs/diagrams/reference-and-checks.svg)
 
 These are **development checks within the available acquisitions**, not a claim of untouched, independent test data. Reproducing them checks repeatability. New recordings are needed to test generalization.
 
