@@ -1,0 +1,15 @@
+schema_version: 1
+channels: [vibration, torque, current_r, current_s, current_t]
+native_rates_hz: [25600, 25600, 100000, 100000, 100000]
+target_rate_hz: 25600
+window_seconds: 2.0
+hop_seconds: 1.0
+filter:
+  method: resample_poly
+  window: [kaiser, 5.0]
+  padtype: line
+invalid_samples: reject_recording
+flat_channels: reject_recording
+trailing_padding: nan_only_after_expected_native_samples
+alignment: common_start_reported_by_source
+

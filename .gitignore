@@ -1,0 +1,41 @@
+# Private/large inputs and regenerated outputs
+dataset/raw/
+dataset/processed/
+outputs/runs/
+outputs/live_sessions/
+visualizations/
+private/
+*.mat
+*.npz
+*.h5
+*.tdms
+*.zip
+*.z[0-9][0-9]
+# Environments, builds and local execution state
+.venv*/
+venv/
+node_modules/
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.log
+verification/
+test-results/
+playwright-report/
+.coverage
+htmlcov/
+.DS_Store
+Thumbs.db
+# Secrets and host-specific settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+.codex/
+LOCAL_*.json

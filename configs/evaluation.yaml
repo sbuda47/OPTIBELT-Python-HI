@@ -1,0 +1,21 @@
+status: frozen_before_feature_extraction
+protocol: grouped_v1
+assignments: dataset/splits/grouped_v1/assignments.csv
+provenance: dataset/splits/grouped_v1/protocol.json
+split_unit: motor_capacity_hp_and_load_percent
+primary_capacities_hp: [3, 5]
+groups: [[3, 0], [3, 30], [3, 60], [5, 0], [5, 30]]
+folds: 5
+calibration_rule: next_group_in_cyclic_order
+random_window_split: false
+fit_population: healthy_fit_role_only
+feature_selection_population: healthy_fit_role_only
+calibration_population: healthy_calibration_role_only
+test_population: held_out_operating_group
+other_faults: unused_within_fold
+physical_motor_id: unknown
+acquisition_run_id: unknown
+thresholds: unset
+prior_exposure: recordings_previously_used_in_final_year_study
+interpretation: retrospective_operating_group_transfer
+

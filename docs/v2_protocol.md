@@ -1,0 +1,20 @@
+# V2 operating-aware reference: frozen development protocol
+
+Scope: complete five-channel data only. Condition is (rated HP, load percentage, invariant/variable acquisition profile, supply upper bound 50/52/58 Hz). Supply bounds are metadata, not instantaneous frequency estimates. No interpolation, extrapolation, default load or cross-capacity fallback. Enumerate all 27 requested combinations across 1/3/5 HP, 0/30/60% and three profiles. Only states with complete healthy data are supported for development.
+
+Use corrected candidate_v1 features. For each healthy recording of duration T, fitting windows must lie entirely inside [2,0.5T-2] seconds, calibration inside [0.5T+2,0.75T-2], and checking inside [0.75T+2,T-2]. Four-second gaps separate roles, with two-second outer guards. These exceed the support of the existing polyphase FIR; windows do not overlap across roles. Resampling remains offline and uses the same source recording; this is not independent-acquisition validation.
+
+Fit a 60-feature healthy mean for each condition using only fitting windows, with equal recording weights within state. Centre each fitting record by its state mean, then fit a shared regularized residual covariance separately within each HP rating. Reuse the v1 fitting algorithm: defined redundant-column exclusions, numerical variance floor 1e-12, absolute correlation pruning 0.98, shrinkage 0.1 and Cholesky distances. No learned parameters are shared across HP ratings. No additional feature or hyperparameter search occurs.
+
+Calibration/check episodes use the first 25 eligible windows of their respective blocks. Start EWMA at the episode's first distance, alpha=0.2, and exclude the first ten windows from alarm decisions. The following 15 decisions are the common monitoring horizon for every recording (including faults). No extra episodes are manufactured from longer recordings.
+
+For each raw or EWMA calibration episode, compute E = max over its decision horizon of the minimum of each consecutive triplet of scores. Threshold = maximum E among that state's healthy calibration episodes. With strictly greater comparisons, this corresponds exactly to the presence of a three-consecutive-window event. Calibrate raw and EWMA separately. Most states have ONE calibration episode; zero calibration events by construction is not a rare-event probability guarantee. No false-alarm-rate target or confidence claim is made.
+
+HI = 100/(1+(distance/threshold)^2). Threshold equality is not an alarm. Save raw distance, causal EWMA distance, both HI values, decision eligibility and persistence flags. Reset state at each explicitly declared episode; warm-up is visible. Arbitrary live transitions, instantaneous load estimation and live filtering remain unimplemented. A deployment wrapper must identify stable operating episodes explicitly and must not quietly reset to suppress alarms.
+
+Only healthy fit/calibration blocks influence the bank. Score healthy check blocks and supported fault check blocks after freezing the bank. Unsupported fault conditions produce an unsupported record with no numeric HI or normal/fault verdict. Quality exclusions remain excluded. The three healthy-only 1 HP constant-speed states cannot support a fault-detection claim.
+
+Primary outputs: condition coverage, all-record admission/routing, temporal split assignments, serialized bank, calibration episode details, per-window predictions, per-record results, provenance and a development report. Preserve all v1 files/configuration/code. V1 tested withheld operating groups on a different population; v2 checks later segments of familiar recordings. Report this distinction instead of claiming a head-to-head improvement. All these recordings have already been examined, so this is exposed-data development.
+
+This version uses exact-state centres rather than fitting an interpolating load-response curve. That is a deliberate first step given sparse coverage. The per-rating covariance pools residual variability to avoid fitting 17 unrelated covariance matrices.
+

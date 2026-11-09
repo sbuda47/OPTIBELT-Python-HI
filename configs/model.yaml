@@ -1,0 +1,15 @@
+schema_version: 1
+protocol: grouped_v1
+feature_schema: candidate_v1
+variants: [fusion, vibration, current, torque, diagonal]
+recording_weighting: equal
+drop_suffixes: [rms, power_fraction_5000_12800]
+relative_scale_floor: 1.0e-12
+correlation_limit: 0.98
+shrinkage: 0.10
+calibration_quantile: 0.99
+ewma_alpha: 0.20
+persistent_windows: 3
+hi_mapping: 100_over_1_plus_squared_threshold_ratio
+alarm_comparison: strictly_greater
+

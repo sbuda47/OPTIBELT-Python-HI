@@ -1,0 +1,6 @@
+# Frozen release hashes are over exact bytes: never rewrite these line endings.
+src/optibelt_hi/** -text
+outputs/releases/** -text
+configs/** -text
+dataset/splits/** -text
+*.png binary

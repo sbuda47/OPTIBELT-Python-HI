@@ -1,0 +1,42 @@
+{
+  "format": "optibelt_hi_candidate_v1",
+  "candidate_version": "hi_candidate_v1",
+  "created_utc": "2026-11-07T17:09:16.782966+00:00",
+  "bundle_sha256": "3092a15c60c24cdd38b21648baa14e3a1796a2bda79bb6ee756ad66b0cd5a0ae",
+  "implementation_sha256": {
+    "__init__.py": "e8415572661fe13e638f505ddda9788329f0b1e9e7e950157901ae9a1a5b5ef2",
+    "cli.py": "384ea75fadb936d0adce5b72152364a4eba453bbead5d6035108a566e3a0620a",
+    "configuration.py": "0e165b2cc7309de0d28974c1c540c17cb747732134431401b8072a2bfcbf262e",
+    "data/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "data/audit.py": "7160d264751d827208339627dd50e1e403ed2897de62b912930d22b54b6d3159",
+    "data/recordings.py": "7c928115107c074fe996775f49e2608d97bf464c252555cb4fd61778f612ca84",
+    "deployment/__init__.py": "f416345d82c6a8c56de4d0df26d3003d40d46ddf3a5e8ff24ff788fd525827c3",
+    "deployment/bundle.py": "703962b99a73632af3e709a366af04bf4502e29636b11de19a20062932ba914c",
+    "deployment/monitor.py": "210ab42926d26d1b67b0c6cc0b644839484e08acbc91c1e52fc77ec11ffd3326",
+    "evaluation/__init__.py": "1baf802ab5b3f4cf963b85c11bfc6ab4915ee9f0410a3afa0822f90456400f24",
+    "evaluation/continuous_calibration.py": "7f0a51fc7dd0ccbfe88745f553095c31c56607e0df831fc2092b31c14818d2ed",
+    "evaluation/load_experiment.py": "9538e91caf8844cac4991f85389ee4831458d14fb435d1cffbd8161def095865",
+    "evaluation/long_monitoring.py": "0ff25f50ccf2466a5c6ac783e6e089d8e777fe049dae7e00dae4fe19e01586ab",
+    "evaluation/model_run.py": "066496563665f15b2ea393b68aee762dbf69f7fe92b948b65f8d03480134e26a",
+    "evaluation/operating_v2_run.py": "96f411052fc662b9767a6eff2b65dd9a775d392a74cb56c3e98627e0f1d8f935",
+    "evaluation/splits.py": "d7681fe47d21f3dc0dd7dac36fb09ef6c4cc19e135b5331bd92a91d22ebf50e4",
+    "features/__init__.py": "421582f438df11eff04f11d468e2bc3ba79350ea1c9fbd525dbd430a4bab9ca9",
+    "features/batch.py": "ff5696028d2069464678d85c12a1fa1fda6cbe10ab2629487972a454cadab75e",
+    "features/core.py": "91cf7bf2676af2dd3495c7a69c68a776c2f246d17bc052b6cf941ebfee7b1b33",
+    "model/__init__.py": "cb25e5706fe724e3bca0305d716692ac48ea4a43a5bed2220dc1ce4da5c2d8e2",
+    "model/baseline.py": "96c6826fc799800049d8552edb655305943e39ea022964188bd1ced65e17aa3a",
+    "model/load_aware.py": "beda79d4499220ac6dd00fe7af62f2971b057ba5cdaad124e80f1073cfaa7028",
+    "model/operating_v2.py": "8c56ad953911511917a81429d1bd68f652a9e57b5093577258b1ce65af9dd2c8",
+    "monitoring/__init__.py": "56f3a5dab09b2eb9f43e7879c6b3e37f54bb4599a5c3ab190c63e111aaf48919",
+    "monitoring/health.py": "410d5cf6b59c215329c319bc3dd20c8ace80c2e59308ac0cf84f0aff1c97a6ec",
+    "playback.py": "199f57946536d217819af2cf2434e581d6ec80c6169559a7e7c444e52d80158f",
+    "preprocessing/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "preprocessing/signals.py": "1bfcd4f1edd8f1c3c978c64c84ee7da6e2cde630ee459ea51df6d89a3979d1b7"
+  },
+  "packages": {
+    "numpy": "2.4.1",
+    "scipy": "1.17.1",
+    "h5py": "3.15.1",
+    "PyYAML": "6.0.3"
+  }
+}

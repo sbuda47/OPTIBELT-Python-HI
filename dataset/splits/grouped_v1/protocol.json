@@ -1,0 +1,84 @@
+{
+  "created_utc": "2026-11-06T00:09:42.075433+00:00",
+  "status": "frozen_before_feature_extraction",
+  "protocol": "grouped_v1",
+  "split_unit": "motor_capacity_hp_and_load_percent",
+  "groups": [
+    "3HP_0pct",
+    "3HP_30pct",
+    "3HP_60pct",
+    "5HP_0pct",
+    "5HP_30pct"
+  ],
+  "admission_sha256": "f4e0d181a654ed3234cdf7b84ab6b262cb2acee3a16dc3d3c925ee7787d6f2d5",
+  "assignments_sha256": "248b0d90c6b09e5be2ce3886cdeea5b6413c1fc08333d00027f9249df546f074",
+  "generator_sha256": "d7681fe47d21f3dc0dd7dac36fb09ef6c4cc19e135b5331bd92a91d22ebf50e4",
+  "folds": [
+    {
+      "fold": 1,
+      "test_group": "3HP_0pct",
+      "calibration_group": "3HP_30pct",
+      "role_counts": {
+        "excluded_quality": 9,
+        "unused_fault": 9,
+        "test": 6,
+        "exploratory": 5,
+        "calibration": 3,
+        "fit": 9
+      }
+    },
+    {
+      "fold": 2,
+      "test_group": "3HP_30pct",
+      "calibration_group": "3HP_60pct",
+      "role_counts": {
+        "excluded_quality": 9,
+        "test": 6,
+        "unused_fault": 10,
+        "exploratory": 5,
+        "fit": 8,
+        "calibration": 3
+      }
+    },
+    {
+      "fold": 3,
+      "test_group": "3HP_60pct",
+      "calibration_group": "5HP_0pct",
+      "role_counts": {
+        "excluded_quality": 9,
+        "unused_fault": 10,
+        "test": 6,
+        "exploratory": 5,
+        "fit": 8,
+        "calibration": 3
+      }
+    },
+    {
+      "fold": 4,
+      "test_group": "5HP_0pct",
+      "calibration_group": "5HP_30pct",
+      "role_counts": {
+        "excluded_quality": 9,
+        "unused_fault": 12,
+        "exploratory": 5,
+        "test": 4,
+        "fit": 8,
+        "calibration": 3
+      }
+    },
+    {
+      "fold": 5,
+      "test_group": "5HP_30pct",
+      "calibration_group": "3HP_0pct",
+      "role_counts": {
+        "excluded_quality": 9,
+        "unused_fault": 11,
+        "test": 5,
+        "exploratory": 5,
+        "calibration": 2,
+        "fit": 9
+      }
+    }
+  ],
+  "interpretation": "Retrospective operating-group transfer. Unknown motor/run identities prevent independent-machine claims. No model outcomes used for these assignments."
+}
