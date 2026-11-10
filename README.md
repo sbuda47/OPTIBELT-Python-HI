@@ -187,6 +187,19 @@ Local preparation verified raw-data and feature-cache reproduction, **140 Python
 
 Raw files, split archives, generated runs, environments and logs are excluded by `.gitignore`. Keep `.gitattributes` intact: it preserves the frozen files' exact bytes for the integrity checks. Some historical audits need the separate original provenance archive; the reproduction guide identifies these dependencies.
 
+## Citation and acknowledgement
+
+Current software version: **0.1.0**
+
+If you use OPTIBELT-Python-HI to generate, analyse or report research
+results, please cite the software version and Git commit used.
+If you modify the implementation, identify those changes and
+acknowledge the original project.
+
+Repository: https://github.com/sbuda47/OPTIBELT-Python-HI
+
+Fixed release: [v0.1.0](https://github.com/sbuda47/OPTIBELT-Python-HI/releases/tag/v0.1.0)
+
 ## Attribution and licensing
 
 The motor recordings are credited to **Wonho Jung and the dataset contributors** through the Mendeley records and associated article linked above. This repository distributes the research implementation and derived reference artifacts, not the raw dataset.
